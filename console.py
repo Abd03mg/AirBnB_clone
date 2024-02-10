@@ -33,7 +33,7 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         ''' Dont execite anything if it is emty line'''
         pass
-
+    """
     def do_create(self, line):
         ''' Creates new instance of class '''
         lis = shlex.split(line)
@@ -132,6 +132,7 @@ class HBNBCommand(cmd.Cmd):
                 storage.save()
             case '_':
                 return
+    """
 
 
 if __name__ == "__main__":
