@@ -33,7 +33,7 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         ''' Dont execite anything if it is emty line'''
         pass
-    """
+
     def do_create(self, line):
         ''' Creates new instance of class '''
         lis = shlex.split(line)
@@ -103,13 +103,13 @@ class HBNBCommand(cmd.Cmd):
                     ["{}".format(i.__str__()) for i in storage.all().values()]
                     )
             print(ob)
-
+    """
     def do_update(self, line):
         ''' Update Instance attribute value.'''
         storage.reload()
         objs = storage.all()
         lis = shlex.split(line)
-        match len(lis):
+        match len(lis)
             case 0:
                 print("** class name missing **")
             case 1:
