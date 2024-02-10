@@ -2,14 +2,14 @@
 ''' command line for AirBnb '''
 import cmd
 import shlex
-#from models.base_model import BaseModel
-#from models.user import User
-#from models.place import Place
-#from models.review import Review
-#from models.state import State
-#from models.city import City
-#from models.amenity import Amenity
-#from models import storage
+from models.base_model import BaseModel
+from models.user import User
+from models.place import Place
+from models.review import Review
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models import storage
 
 
 class HBNBCommand(cmd.Cmd):
@@ -88,7 +88,6 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, line):
         ''' Show all string representation of entire class.'''
         lis = shlex.split(line)
-        #lis = line.split()
         storage.reload()
         ob = []
         if len(lis) == 1:
@@ -100,7 +99,9 @@ class HBNBCommand(cmd.Cmd):
                         ob.extend(["{}".format(i.__str__())])
                 print(ob)
         elif len(lis) == 0:
-            ob.extend(["{}".format(i.__str__()) for i in storage.all().values()])
+            ob.extend(
+                    ["{}".format(i.__str__()) for i in storage.all().values()]
+                    )
             print(ob)
 
     def do_update(self, line):
