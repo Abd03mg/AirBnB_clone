@@ -136,6 +136,8 @@ class HBNBCommand(cmd.Cmd):
             #   return
             objs["{}.{}".format(lis[0], lis[1])].__dict__[lis[2]] = lis[3]
             storage.save()
+        else:
+            return
 
 
 if __name__ == "__main__":
