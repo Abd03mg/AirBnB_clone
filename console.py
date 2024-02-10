@@ -103,36 +103,36 @@ class HBNBCommand(cmd.Cmd):
                     ["{}".format(i.__str__()) for i in storage.all().values()]
                     )
             print(ob)
-    """
+
     def do_update(self, line):
         ''' Update Instance attribute value.'''
         storage.reload()
         objs = storage.all()
         lis = shlex.split(line)
-        match len(lis)
-            case 0:
-                print("** class name missing **")
-            case 1:
-                if lis[0] not in self.CLSs:
-                    print("** class doesn't exist **")
-                else:
-                    print("** instance id missing **")
-            case 2:
-                try:
-                    objs["{}.{}".format(lis[0], lis[1])]
-                except KeyError:
-                    print("** no instance found **")
-                    return
-                print("** attribute name missing **")
-            case 3:
-                print("** value missing **")
-            case 4:
-                print("stage 4")
-                objs["{}.{}".format(lis[0], lis[1])].__dict__[lis[2]] = lis[3]
-                storage.save()
-            case '_':
+        if len(lis) == 0:
+            print("** class name missing **")
+            return
+        elif len(lis) == 1:
+            if lis[0] not in self.CLSs:
+                print("** class doesn't exist **")
+            else:
+                print("** instance id missing **")
+            return
+        elif len(lis) == 2:
+            try:
+                objs["{}.{}".format(lis[0], lis[1])]
+            except KeyError:
+                print("** no instance found **")
                 return
-    """
+            print("** attribute name missing **")
+            return
+        elif len(lis) == 3:
+            print("** value missing **")
+            return
+        elif len(lis) == 4:
+            print("stage 4")
+            objs["{}.{}".format(lis[0], lis[1])].__dict__[lis[2]] = lis[3]
+            storage.save()
 
 
 if __name__ == "__main__":
