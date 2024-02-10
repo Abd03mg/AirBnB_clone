@@ -134,7 +134,7 @@ class HBNBCommand(cmd.Cmd):
                 Att_type = type(objs["{}.{}".format(lis[0], lis[1])].__dict__[lis[2]])
             except KeyError:
                 return
-            objs["{}.{}".format(lis[0], lis[1])].__dict__[lis[2]] = Att_type(lis[3])
+            objs["{}.{}".format(lis[0], lis[1])].__dict__[lis[2]] = eval(Att_type)(lis[3])
             storage.save()
 
 
