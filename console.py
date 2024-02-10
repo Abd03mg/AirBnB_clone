@@ -130,11 +130,11 @@ class HBNBCommand(cmd.Cmd):
             print("** value missing **")
             return
         elif len(lis) == 4:
-            try:
-                Att_type = type(objs["{}.{}".format(lis[0], lis[1])].__dict__[lis[2]])
-            except KeyError:
-                return
-            objs["{}.{}".format(lis[0], lis[1])].__dict__[lis[2]] = eval(Att_type)(lis[3])
+            #try:
+            #Att_type = type(objs["{}.{}".format(lis[0], lis[1])].__dict__[lis[2]])
+            #except KeyError:
+            #   return
+            objs["{}.{}".format(lis[0], lis[1])].__dict__[lis[2]] = lis[3]
             storage.save()
 
 
