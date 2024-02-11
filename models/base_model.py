@@ -18,6 +18,7 @@ class BaseModel:
                     arguments will be passed.
     '''
     __timef = "%Y-%m-%dT%H:%M:%S.%f"
+
     def __init__(self, *args, **kwargs):
 
         if kwargs:

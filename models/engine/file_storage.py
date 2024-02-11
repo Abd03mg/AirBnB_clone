@@ -27,7 +27,9 @@ class FileStorage:
         return self.__objects
 
     def new(self, obj):
-        ''' function that sets in __onject the obj with key "<obj class name>.id".'''
+        ''' function that sets in __onject
+        the obj with key "<obj class name>.id".
+        '''
         self.__objects["{}.{}".format(obj.__class__.__name__, obj.id)] = obj
 
     def save(self):
